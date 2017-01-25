@@ -20,5 +20,7 @@ This is done using W_constraint = maxnorm(3)
     
 dropout is a regularization method for neural net
 The dropout rate of 20% or one in 5 inputs will be randomly excluded from each update cycle.
+I use categorical crossentropy for the loss, and sgd as the optimizer
 
-
+    sgd = SGD(lr=0.1, momentum=0.9, decay=0.0, nesterov=True)
+    model.compile(loss='categorical_crossentropy', optimizer='sgd')
