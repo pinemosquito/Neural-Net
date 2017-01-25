@@ -4,10 +4,11 @@ First, let import the Sequential model type from Keras.  This is simply a linear
     from keras.model import Sequential
     from keras.model import Dense, Dropout, Activation
     
-I impose constraint on weight for each hidden layer to make sure maximum norm of weight does not exceed value of 3
+I apply Neural Net to NMIST dataset.  This is developed by Yann LeCunn, Corinna Cortes and Christopher Burges for evaluating
+machine learning models on handwritten digit classification problem. 
+To start, I impose constraint on weight for each hidden layer to make sure maximum norm of weight does not exceed value of 3.
 This is done using W_constraint = maxnorm(3)
     
-
     model = Sequential()
     model.add(Dense(128, input_dim=input_dim, init='normal', W_constraint=maxnorm(3)))
     model.add(Activation('relu'))
@@ -18,9 +19,16 @@ This is done using W_constraint = maxnorm(3)
     model.add(Dense(nb_classes))
     model.add(Activation('softmax'))
     
-dropout is a regularization method for neural net
+Dropout is a regularization method for neural net
 The dropout rate of 20% or one in 5 inputs will be randomly excluded from each update cycle.
 I use categorical crossentropy for the loss, and sgd as the optimizer
 
     sgd = SGD(lr=0.1, momentum=0.9, decay=0.0, nesterov=True)
     model.compile(loss='categorical_crossentropy', optimizer='sgd')
+
+There are several parameters that can be tuned to optimize prediction accuracies
+    Start with Dense = 128 and a low learning rate of 0.01
+    Increase momentum gradually from 0.8 to 0.9 
+    Increase learning rate to 0.1
+    Set nesterov=True
+    Increase Dense to 512
