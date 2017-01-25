@@ -27,6 +27,7 @@ I use categorical crossentropy for the loss, and sgd as the optimizer
     model.compile(loss='categorical_crossentropy', optimizer='sgd')
 
 There are several parameters that can be tuned to optimize prediction accuracies
+
     Start with Dense = 128 and a low learning rate of 0.01
     Increase momentum gradually from 0.8 to 0.9 
     Increase learning rate to 0.1
