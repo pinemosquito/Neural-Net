@@ -4,11 +4,9 @@ First, let import the Sequential model type from Keras.  This is simply a linear
     from keras.model import Sequential
     from keras.model import Dense, Dropout, Activation
     
-dropout is a regularization method for neural net
-The dropout rate of 20% or one in 5 inputs will be randomly excluded from each update cycle.
-additionally, we impose constraint on weight for each hidden layer
-to make sure that maximum norm of weight does not exceed value of 3
-this is done W_constraint = maxnorm(3)
+I impose constraint on weight for each hidden layer to make sure maximum norm of weight does not exceed value of 3
+This is done using W_constraint = maxnorm(3)
+    
 
     model = Sequential()
     model.add(Dense(128, input_dim=input_dim, init='normal', W_constraint=maxnorm(3)))
@@ -20,4 +18,7 @@ this is done W_constraint = maxnorm(3)
     model.add(Dense(nb_classes))
     model.add(Activation('softmax'))
     
+dropout is a regularization method for neural net
+The dropout rate of 20% or one in 5 inputs will be randomly excluded from each update cycle.
+
 
