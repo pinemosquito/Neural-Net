@@ -6,7 +6,10 @@ First, let import the Sequential model type from Keras.  This is simply a linear
     
 I apply Neural Net to NMIST dataset.  This is developed by Yann LeCunn, Corinna Cortes and Christopher Burges for evaluating
 machine learning models on handwritten digit classification problem. Images of digits were taken from varieties of scanned documents
-Each image is a 28x28 pixel square (or 784 pixels todal).  There are 10 digits (0 to 9) or 10 classes to predict  
+Each image is a 28x28 pixel square (or 784 pixels todal).  There are 10 digits (0 to 9) or 10 classes to predict.
+
+The pixels are grey scale between 0 and 255.  For neural net, it is always a good idea to pre-process data by 
+dividing by maximum to normalize data, and to center the mean at zero.
 
 To start, I impose constraint on weight for each hidden layer to make sure maximum norm of weight does not exceed value of 3.
 This is done using W_constraint = maxnorm(3)
