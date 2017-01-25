@@ -34,6 +34,11 @@ I use categorical crossentropy for the loss, and sgd as the optimizer
 I use softmax activation function on the output layer to convert output into probability.
 Logarithmic loss is used as loss function (Keras syntax = categorical_crossentropy)
 
+    model.fit(X_train, y_train, nb_epoch=10, batch_size=16, validation_split=0.15, show_accuracy=True, verbose=2)
+
+I train model with 10 epoch with update every 16 images. I set aside 15% as validation set.
+A verbose value of 2 is used to reduce model output to one line for each training epoch.
+
 There are several parameters that can be tuned to optimize prediction accuracies
 
     Start with Dense = 128 and a low learning rate of 0.01
