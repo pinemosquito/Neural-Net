@@ -1,4 +1,5 @@
 Keras is a high-level neural networks library, written in Python 
+
 The core data structure of Keras is a model
 
 from keras.models import Sequential
