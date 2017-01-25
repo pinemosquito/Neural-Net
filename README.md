@@ -5,7 +5,9 @@ First, let import the Sequential model type from Keras.  This is simply a linear
     from keras.model import Dense, Dropout, Activation
     
 I apply Neural Net to NMIST dataset.  This is developed by Yann LeCunn, Corinna Cortes and Christopher Burges for evaluating
-machine learning models on handwritten digit classification problem. 
+machine learning models on handwritten digit classification problem. Images of digits were taken from varieties of scanned documents
+Each image is a 28x28 pixel square (or 784 pixels todal).  There are 10 digits (0 to 9) or 10 classes to predict  
+
 To start, I impose constraint on weight for each hidden layer to make sure maximum norm of weight does not exceed value of 3.
 This is done using W_constraint = maxnorm(3)
     
