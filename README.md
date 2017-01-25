@@ -30,6 +30,9 @@ I use categorical crossentropy for the loss, and sgd as the optimizer
 
     sgd = SGD(lr=0.1, momentum=0.9, decay=0.0, nesterov=True)
     model.compile(loss='categorical_crossentropy', optimizer='sgd')
+ 
+I use softmax activation function on the output layer to convert output into probability.
+Logarithmic loss is used as loss function (Keras syntax = categorical_crossentropy)
 
 There are several parameters that can be tuned to optimize prediction accuracies
 
