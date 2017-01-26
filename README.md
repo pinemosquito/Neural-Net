@@ -30,6 +30,7 @@ This is done using W_constraint = maxnorm(3)
     
 Dropout is a regularization method for neural net. A dropout rate of 20% means one in 5 inputs will be randomly 
 excluded from each update cycle.  This is quite useful. Keras offered a host of objective functions and optimization schemes
+
 Error loss: RMSE, MSE
 Hinge loss: hinge, squared_hinge
 Classification loss: binary_crossentropy, categorical_crossentropy
