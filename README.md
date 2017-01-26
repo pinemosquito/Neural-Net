@@ -56,3 +56,4 @@ There are several parameters that can be tuned to optimize prediction accuracies
     Increase learning rate to 0.1
     Set nesterov=True
     Increase Dense to 512
+
