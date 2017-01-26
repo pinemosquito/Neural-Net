@@ -1,5 +1,6 @@
-I started poking at Keras recently.  This is a neural networks library written in Python.  
-I used Keras with Tensorflow in the backend.
+I started poking at Keras recently.  This is a neural networks library written in Python which wraps around Tensorflow 
+in the backend.  This is really useful as we don't have to dive into details of Tensorflow.
+
 
 First, let import the Sequential model type from Keras.  This is simply a linear stack of neural network layers.
 
