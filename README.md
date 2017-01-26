@@ -1,9 +1,13 @@
-I started to poke at Keras which is a high-level neural networks library, written in Python.  I used Keras with Tensorflow in the backend.
+I started poking at Keras recently.  This is a neural networks library written in Python.  
+I used Keras with Tensorflow in the backend.
+
 First, let import the Sequential model type from Keras.  This is simply a linear stack of neural network layers.
 
     from keras.model import Sequential
     from keras.model import Dense, Dropout, Activation
-    
+
+The idea is to create first layer to handle input tensor, output layer to handle target and virtually any model in between.
+
 I apply Neural Net to NMIST dataset.  This is developed by Yann LeCunn, Corinna Cortes and Christopher Burges for evaluating
 machine learning models on handwritten digit classification problem. Images of digits were taken from varieties of scanned documents.
 Each image is a 28x28 pixel square (or 784 pixels total).  There are 10 digits (0 to 9) or 10 classes to predict.
@@ -26,7 +30,14 @@ This is done using W_constraint = maxnorm(3)
     
 Dropout is a regularization method for neural net
 The dropout rate of 20% or one in 5 inputs will be randomly excluded from each update cycle.
-I use categorical crossentropy for the loss, and sgd as the optimizer
+
+Keras offered a host of objective functions and optimization schemes
+Error loss: RMSE, MSE
+Hinge loss: hinge, squared_hinge
+Classification loss: binary_crossentropy, categorical_crossentropy
+Optimizer: SGD, RMSPROP, Adam
+
+I use categorical_crossentropy for the loss, and sgd as the optimizer
 
     sgd = SGD(lr=0.1, momentum=0.9, decay=0.0, nesterov=True)
     model.compile(loss='categorical_crossentropy', optimizer='sgd')
