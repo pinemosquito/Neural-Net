@@ -5,7 +5,7 @@ in the backend.  This is really useful as we don't have to dive into details of 
 First, let import the Sequential model type from Keras.  This is simply a linear stack of neural network layers.
 
     from keras.model import Sequential
-    from keras.model import Dense, Dropout, Activation
+    from keras.layers.core import Dense, Dropout, Activation
 
 The idea is to create first layer to handle input tensor, output layer to handle target and virtually any model in between.
 
